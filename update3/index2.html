@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glamineer</title>
+    <link rel="icon" href="logoMain2.png" type="image/png"> <!-- Add this line -->
+    <!-- Isko change karna he... glamineer ka circle logo lagega will edit later -->
+    <script>document.documentElement.className="js";
+    var supportsCssVars=function(){var e,t=document.createElement("style");
+    return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");
+    </script>
+
+    
+    <!-- --------------------------------- -->
+
+    <!-- IMAGES TO CONTENT PATHAR WALA -->
+    <link rel="stylesheet" type="text/css" href="index2.css">
+    
+</head>
+<body>
+    <header class="header">
+        <div class="logo"> <img src="logoMain2.png" alt="Company Logo"> </div>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <div class="menu" id="menu">
+            <div class="menu-item">
+                <a href="#">Contact</a>
+            </div>
+            <div class="menu-item">
+                <a href="#">Products</a>
+                <div class="sub-menu">
+                    <a href="#">Submenu Item 1</a>
+                    <a href="#">Submenu Item 2</a>
+                    <a href="#">Submenu Item 3</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a href="#">About Us</a>
+                
+            </div>
+            <!-- Add more menu items as needed -->
+        </div>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()", style="color: #fff">×</a>
+            <a href="#">Home</a>
+            <a href="#">Products</a>
+            <a href="#">About Us</a>
+    
+        </div>
+    </header>
+
+    
+
+    <div class="slideshow-container">
+        <!-- Slides -->
+        <!-- <div class="mySlides fade">
+            <img src="phone.jpg" style="width:100%">
+        </div> -->
+
+        <div class="mySlides fade">
+            <img src="ss4.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="ss5.jpg" style="width:100%">
+        </div>
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+
+        <!-- Navigation arrows -->
+        <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a> -->
+    </div>
+    <div class="quote">
+        "Your exclusive journey begins here. This is a quote for Glamineer, The skin to Your Furniture. This quote will be given by Chaitya Doshi"
+    </div>
+    <!-- Circle indicators -->
+
+
+
+    <div class="card-container">
+        <a href="update2\artisanal.html">
+        <div class="fullCard" >
+            <div class="card card1">
+                <div class="card-content"></div>
+            </div>
+            <div class="desc">
+                <h2>ARTISANAL PANELS</h2>
+                <p>Card content...</p>
+            </div>
+        </div>
+        </a>
+
+        <a href="update2\door.html" class="fullCard">
+            <div class="fullCard">
+                <div class="desc">
+                    <h2>DOOR SKINS</h2>
+                    <p>Card content...</p>
+                </div>
+                <div class="card card2">
+                    <div class="card-content"></div>
+                </div>
+            </div>
+            </a>
+
+        <centre>
+        <a href="update2\texture.html">
+        <div class="fullCard">
+            <div class="card card3">
+                <div class="card-content"></div>
+            </div>
+            <div class="desc">
+                <h2>TEXTURE PANELS</h2>
+                <p>Card content...</p>
+            </div>
+        </div>
+        </a>
+    </centre>
+        <!-- <a href="update2\artisanal.html" class="fullCard">
+        <div class="fullCard">
+            <div class="desc">
+                <h2>HANDLES</h2>
+                <p>Card content...</p>
+            </div>
+            <div class="card card4">
+                <div class="card-content"></div>
+            </div>
+        </div>
+        </a> -->
+    </div>
+    <div class="testimonials">
+        <div class="testimonial">
+            <div class="testimonial-image" style="background-color: black;"></div>
+            <div class="testimonial-name">Name Surname</div>
+            <div class="testimonial-text">Testimonial text...</div>
+        </div>
+        <div class="testimonial">
+            <div class="testimonial-image" style="background-color: black;"></div>
+            <div class="testimonial-name">Name Surname</div>
+            <div class="testimonial-text">Testimonial text...</div>
+        </div>
+        <div class="testimonial">
+            <div class="testimonial-image" style="background-color: black;"></div>
+            <div class="testimonial-name">Name Surname</div>
+            <div class="testimonial-text">Testimonial text...</div>
+        </div>
+        <!-- Repeat for other testimonials -->
+    </div>
+    <div class="login-box">
+        <p>Get Catalog</p>
+        <form action="" id="glamineer">
+            <div class="user-box">
+                <input required="" name="name" id="name" type="text">
+                <label>Name</label>
+              </div>
+          <div class="user-box">
+            <input required="" name="email" id="email" type="text">
+            <label>Email</label>
+          </div>
+          <div class="user-box">
+            <input required="" name="phone" id="phone" type="text">
+            <label>Phone</label>
+          </div>
+          <!-- <input class="button" value="Get Catalog" name="get" id="get" type="submit"> -->
+          <!-- <button class="button" type="submit">Get Catalog</button> -->
+          <button class="button" type="submit" name="get" id="get">
+            Get Catalog
+          </button>
+        </form>
+        <!-- <p>Don't have an account? <a href="" class="a2">Sign up!</a></p> -->
+      </div>
+
+      <script>
+      let form = document.querySelector("form");
+      // The document.querySelector() method returns the first element that matches a specified CSS selector.
+      form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          // The preventDefault() method stops the form from submitting and prevents the page from refreshing.
+          let data = new FormData(form);
+          // The FormData() method creates a new FormData object that contains the values of all the form fields.
+          fetch('https://script.google.com/macros/s/AKfycbxtXRv-Ie9U5XyczRLfzJqp5fT6shETf0ovE_ZHvQRMLZrru3nQkASV3_D-3yLbsMzD_A/exec', {
+                  method: "POST",
+                  body: data
+              })
+              // The fetch() method is used to make a request to the server and retrieve data.
+              // This is an example API endpoint. Replace it with the actual URL for the API endpoint you want to use.
+              .then(res => res.text())
+              // The .then() method is used to handle the response from the server.
+              // The response is converted to text using the res.text() method.
+              .then(data => console.log(data));
+      })
+  </script>
+
+<script>
+    document.getElementById('glamineer').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Perform form submission
+        // You can send form data to your desired endpoint here
+
+        // Reset form fields
+        document.getElementById('name').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('phone').value = '';
+
+        alert('Form submitted successfully!'); // Show a success message
+    });
+</script>
+      
+    <footer>
+        <div class="footer-section">
+            <h2>For more information:</h2>
+            <!-- Add your social media links here -->
+        </div>
+        <div class="footer-section">
+            <h2>All content links in header</h2>
+            <!-- Add your content links here -->
+        </div>
+        <div class="footer-section">
+            <h2>Products section</h2>
+            <!-- Add your product links or information here -->
+        </div>
+        <div class="footer-section">
+            <h2>Website made by</h2>
+            <!-- Add your information here -->
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
