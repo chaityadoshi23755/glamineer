@@ -25,6 +25,35 @@
         <!-- <script src="//tympanus.net/codrops/adpacks/analytics.js"></script> -->
     </head>
     <body class="loading">
+    <header class="header" id="header">
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../logoMain2.png" alt="Glamineer Logo">
+            </a>
+        </div>
+        <div class="menu-icon" onclick="openNav()">?</div>
+        <nav class="menu" id="menu">
+            <div class="menu-item"><a href="../index.html#home">Home</a></div>
+            <div class="menu-item">
+                <a href="../index.html#products">Products</a>
+                <div class="sub-menu">
+                    <a href="artisanal.html">Artisanal Panels</a>
+                    <a href="door.html">Door Skins</a>
+                    <a href="../texture.html">Texture Panels</a>
+                </div>
+            </div>
+            <div class="menu-item"><a href="../index.html#about">About Us</a></div>
+            <div class="menu-item"><a href="../index.html#contact">Contact</a></div>
+        </nav>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="../index.html#home" onclick="closeNav()">Home</a>
+            <a href="../index.html#products" onclick="closeNav()">Products</a>
+            <a href="artisanal.html" style="font-size: 1rem; color: var(--text-light);">-- Artisanal Panels</a>
+            <a href="door.html" style="font-size: 1rem; color: var(--text-light);">-- Door Skins</a>
+            <a href="../texture.html" style="font-size: 1rem; color: var(--text-light);">-- Texture Panels</a>
+        </div>
+    </header>
         <main>
             <div class="frame">
                 <div class="frame__title">
@@ -51,7 +80,7 @@
                                 <span class="oh__inner">Panel</span>
                             </span>
                         </h2>
-                        <!-- <p class="preview__desc">A volcanic rock of intermediate composition, between silica-poor basalt and silica-rich rhyolite.</p> -->
+                        <p class="preview__desc">A volcanic rock of intermediate composition, between silica-poor basalt and silica-rich rhyolite.</p>
                     </div>
                 </div>
 
@@ -70,7 +99,7 @@
                                 <span class="oh__inner">Panel</span>
                             </span>
                         </h2>
-                        <!-- <p class="preview__desc">A large mass of intrusive igneous rock made mostly of felsic or intermediate rock types.</p> -->
+                        <p class="preview__desc">A large mass of intrusive igneous rock made mostly of felsic or intermediate rock types.</p>
                     </div>
                 </div>
 
@@ -89,7 +118,7 @@
                                 <span class="oh__inner">Panel</span>
                             </span>
                         </h2>
-                        <!-- <p class="preview__desc">A large mass of intrusive igneous rock made mostly of felsic or intermediate rock types.</p> -->
+                        <p class="preview__desc">A large mass of intrusive igneous rock made mostly of felsic or intermediate rock types.</p>
                     </div>
                 </div>
 
@@ -108,7 +137,7 @@
                                 <span class="oh__inner">Panel</span>
                             </span>
                         </h2>
-                        <!-- <p class="preview__desc">a volcanic rock that consists of highly vesicular rough-textured volcanic glass.</p> -->
+                        <p class="preview__desc">a volcanic rock that consists of highly vesicular rough-textured volcanic glass.</p>
                     </div>
                 </div>
 
@@ -127,7 +156,7 @@
                                 <span class="oh__inner">Panel</span>
                             </span>
                         </h2>
-                        <!-- <p class="preview__desc">An igneous, volcanic rock, with aphanitic-aphyric to aphyric-porphyritic texture.</p> -->
+                        <p class="preview__desc">An igneous, volcanic rock, with aphanitic-aphyric to aphyric-porphyritic texture.</p>
                     </div>
                 </div>
 
@@ -146,7 +175,7 @@
                                 <span class="oh__inner">Rust</span>
                             </span>
                         </h2>
-                        <!-- <p class="preview__desc">An igneous, volcanic rock, with aphanitic-aphyric to aphyric-porphyritic texture.</p> -->
+                        <p class="preview__desc">An igneous, volcanic rock, with aphanitic-aphyric to aphyric-porphyritic texture.</p>
                     </div>
                 </div>
 
@@ -453,7 +482,7 @@
         <script type="module" src="index.e9a2d1b4.js"></script>
         <script src="index.b5e7c14d.js" nomodule="" defer></script>
         <script src="https://tympanus.net/codrops/adpacks/cda_sponsor.js"></script>
-            <script id="thumb-click-script">
+                    <script id="thumb-click-script">
         document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.content__thumbs-item').forEach(thumb => {
                 thumb.style.cursor = 'pointer';
@@ -465,12 +494,21 @@
                     const index = contents.indexOf(contentBlock);
                     const previews = document.querySelectorAll('.preview__img-inner');
                     if (previews[index]) {
-                        previews[index].style.backgroundImage = bgImage;
+                        previews[index].style.setProperty('background-image', bgImage, 'important');
+                        // Also update any child nodes just in case
+                        if(previews[index].children.length > 0) {
+                            previews[index].children[0].style.setProperty('background-image', bgImage, 'important');
+                        }
                     }
                 });
             });
         });
+        
+        // Navigation script for subpages
+        function openNav() { document.getElementById("mySidenav").style.width = "250px"; }
+        function closeNav() { document.getElementById("mySidenav").style.width = "0"; }
         </script>
 </body>
 </html>
+
 
