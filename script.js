@@ -8,13 +8,30 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Mobile Navigation
-function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
+// Custom Cursor Logic
+const cursor = document.getElementById('customCursor');
+if (cursor) {
+    document.addEventListener('mousemove', e => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+    
+    // Add hover effect to all links and buttons
+    const hoverElements = document.querySelectorAll('a, button, .menu-toggle, .fullCard, .content__thumbs-item');
+    hoverElements.forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
+    });
 }
 
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
+// Fullscreen Overlay Navigation
+function toggleNav() {
+    const nav = document.getElementById('overlayNav');
+    const toggleBtn = document.getElementById('menuToggle');
+    if (nav && toggleBtn) {
+        nav.classList.toggle('active');
+        toggleBtn.classList.toggle('active');
+    }
 }
 
 // Hero Slideshow
