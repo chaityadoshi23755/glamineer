@@ -8,45 +8,42 @@
     <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 <body>
+        <!-- Custom Cursor -->
+    <div class="custom-cursor" id="customCursor"></div>
+
     <header class="header" id="header">
         <div class="logo">
             <a href="index.html">
                 <img src="logoMain2.png" alt="Glamineer Logo">
             </a>
         </div>
-        <div class="menu-icon" onclick="openNav()">☰</div>
-        <nav class="menu" id="menu">
-            <div class="menu-item">
-                <a href="#home">Home</a>
-            </div>
-            <div class="menu-item">
-                <a href="#products">Products</a>
-                <div class="sub-menu">
-                    <a href="update2/artisanal.html">Artisanal Panels</a>
-                    <a href="update2/door.html">Door Skins</a>
-                    <a href="texture.html">Texture Panels</a>
-                </div>
-            </div>
-            <div class="menu-item">
-                <a href="#about">About Us</a>
-            </div>
-            <div class="menu-item">
-                <a href="#contact">Contact</a>
-            </div>
-        </nav>
         
-        <!-- Mobile Sidenav -->
-        <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="#home" onclick="closeNav()">Home</a>
-            <a href="#products" onclick="closeNav()">Products</a>
-            <a href="update2/artisanal.html" style="font-size: 1rem; color: var(--text-light);">-- Artisanal Panels</a>
-            <a href="update2/door.html" style="font-size: 1rem; color: var(--text-light);">-- Door Skins</a>
-            <a href="texture.html" style="font-size: 1rem; color: var(--text-light);">-- Texture Panels</a>
-            <a href="#about" onclick="closeNav()">About Us</a>
-            <a href="#contact" onclick="closeNav()">Contact</a>
+        <!-- Luxury Menu Toggle -->
+        <div class="menu-toggle" id="menuToggle" onclick="toggleNav()">
+            <span class="menu-text">Menu</span>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </header>
+
+    <!-- Fullscreen Overlay Navigation -->
+    <div class="overlay-nav" id="overlayNav">
+        <ul class="nav-links">
+            <li><a href="index.html#home" onclick="toggleNav()">Home</a></li>
+            <li>
+                <a href="index.html#products" onclick="toggleNav()">Collections</a>
+                <div class="nav-sublinks">
+                    <a href="update2/artisanal.html">Artisanal</a>
+                    <a href="update2/door.html">Door Skins</a>
+                    <a href="texture.html">Texture</a>
+                </div>
+            </li>
+            <li><a href="index.html#about" onclick="toggleNav()">Our Legacy</a></li>
+            <li><a href="index.html#contact" onclick="toggleNav()">Contact</a></li>
+        </ul>
+    </div>
 
     <main>
         <!-- Hero Section -->
@@ -62,8 +59,8 @@
             </div>
             
             <div class="hero-overlay">
-                <h1 class="hero-title reveal">Elevate Your Space</h1>
-                <p class="hero-subtitle reveal">Premium finishes and textures for modern living.</p>
+                <h1 class="hero-title reveal">Liquid <span>Metal</span></h1>
+                <p class="hero-subtitle reveal">Architectural Finishes Redefined</p>
                 <a href="#products" class="hero-btn reveal">Explore Collection</a>
             </div>
         </section>
