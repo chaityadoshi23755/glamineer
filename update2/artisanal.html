@@ -490,21 +490,37 @@
         <script src="index.b5e7c14d.js" nomodule="" defer></script>
         <script src="https://tympanus.net/codrops/adpacks/cda_sponsor.js"></script>
                     <script id="thumb-click-script">
+                // Robust thumbnail click logic
         document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.content__thumbs-item').forEach(thumb => {
                 thumb.style.cursor = 'pointer';
                 thumb.addEventListener('click', function(e) {
-                    const bgImage = this.style.backgroundImage;
+                    const newBg = this.style.backgroundImage;
+                    if (!newBg) return;
+                    
                     const contentBlock = this.closest('.content');
                     if (!contentBlock) return;
+                    
                     const contents = Array.from(document.querySelectorAll('.content'));
                     const index = contents.indexOf(contentBlock);
                     const previews = document.querySelectorAll('.preview__img-inner');
+                    
                     if (previews[index]) {
-                        previews[index].style.setProperty('background-image', bgImage, 'important');
-                        // Also update any child nodes just in case
-                        if(previews[index].children.length > 0) {
-                            previews[index].children[0].style.setProperty('background-image', bgImage, 'important');
+                        // Find the original URL that we are replacing
+                        const oldBg = previews[index].style.backgroundImage;
+                        
+                        // We replace it on the original element
+                        previews[index].style.setProperty('background-image', newBg, 'important');
+                        
+                        // BUT, GSAP Flip or other scripts might have cloned the element or moved it.
+                        // So we forcefully update EVERY element on the page that currently shares this background image!
+                        if (oldBg && oldBg !== 'none' && oldBg !== '') {
+                            const allElements = document.querySelectorAll('*');
+                            allElements.forEach(el => {
+                                if (el.style.backgroundImage === oldBg || el.style.backgroundImage.includes(oldBg.replace(/"/g, ''))) {
+                                    el.style.setProperty('background-image', newBg, 'important');
+                                }
+                            });
                         }
                     }
                 });
@@ -544,6 +560,7 @@
         </script>
 </body>
 </html>
+
 
 
 
