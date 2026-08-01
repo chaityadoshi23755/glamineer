@@ -26,13 +26,13 @@
     <link rel="stylesheet" type="text/css" href="../index.css">
 </head>
     <body class="loading" style="background-color: #0a0a0a; color: #f0f0f0; font-family: Montserrat, sans-serif;">
-        <!-- Custom Cursor -->
+            <!-- Custom Cursor -->
     <div class="custom-cursor" id="customCursor"></div>
 
-    <header class="header" id="header" style="background: rgba(10,10,10,0.85); border-bottom: 1px solid rgba(255,255,255,0.05); backdrop-filter: blur(15px);">
+    <header class="header" id="header">
         <div class="logo">
             <a href="../index.html">
-                <img src="../logoMain2.png" alt="Glamineer Logo" style="filter: brightness(0) invert(1); height: 35px;">
+                <img src="../logoMain2.png" alt="Glamineer Logo">
             </a>
         </div>
         
@@ -40,26 +40,26 @@
         <div class="menu-toggle" id="menuToggle" onclick="toggleNav()">
             <span class="menu-text">Menu</span>
             <div class="hamburger">
-                <span style="background-color: var(--accent-gold, #d4af37); display:block; width:100%; height:1px; transition:0.4s;"></span>
-                <span style="background-color: var(--accent-gold, #d4af37); display:block; width:100%; height:1px; margin-top:8px; transition:0.4s;"></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
     </header>
 
     <!-- Fullscreen Overlay Navigation -->
-    <div class="overlay-nav" id="overlayNav" style="position:fixed; top:0; left:0; width:100%; height:100vh; background:#141414; z-index:1001; display:flex; align-items:center; justify-content:center; opacity:0; visibility:hidden; transition:0.8s;">
-        <ul class="nav-links" style="list-style:none; text-align:center;">
-            <li style="margin:20px 0;"><a href="../index.html#home" style="font-family:'Cormorant Garamond',serif; font-size:5vw; color:#f0f0f0; text-decoration:none;">Home</a></li>
-            <li style="margin:20px 0;">
-                <a href="../index.html#products" style="font-family:'Cormorant Garamond',serif; font-size:5vw; color:#f0f0f0; text-decoration:none;">Collections</a>
-                <div class="nav-sublinks" style="margin-top:15px; display:flex; gap:20px; justify-content:center;">
-                    <a href="artisanal.html" style="font-family:'Montserrat',sans-serif; font-size:0.9rem; color:#a0a0a0; text-decoration:none; text-transform:uppercase;">Artisanal</a>
-                    <a href="door.html" style="font-family:'Montserrat',sans-serif; font-size:0.9rem; color:#a0a0a0; text-decoration:none; text-transform:uppercase;">Door Skins</a>
-                    <a href="../texture.html" style="font-family:'Montserrat',sans-serif; font-size:0.9rem; color:#a0a0a0; text-decoration:none; text-transform:uppercase;">Texture</a>
+    <div class="overlay-nav" id="overlayNav">
+        <ul class="nav-links">
+            <li><a href="../index.html#home" onclick="toggleNav()">Home</a></li>
+            <li>
+                <a href="../index.html#products" onclick="toggleNav()">Collections</a>
+                <div class="nav-sublinks">
+                    <a href="artisanal.html">Artisanal</a>
+                    <a href="door.html">Door Skins</a>
+                    <a href="../texture.html">Texture</a>
                 </div>
             </li>
-            <li style="margin:20px 0;"><a href="../index.html#about" style="font-family:'Cormorant Garamond',serif; font-size:5vw; color:#f0f0f0; text-decoration:none;">Our Legacy</a></li>
-            <li style="margin:20px 0;"><a href="../index.html#contact" style="font-family:'Cormorant Garamond',serif; font-size:5vw; color:#f0f0f0; text-decoration:none;">Contact</a></li>
+            <li><a href="../index.html#about" onclick="toggleNav()">Our Legacy</a></li>
+            <li><a href="../index.html#contact" onclick="toggleNav()">Contact</a></li>
         </ul>
     </div>
         <main>
@@ -541,16 +541,15 @@
                 el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
             });
         }
-        // Toggle Nav function
+                // Toggle Nav function
         function toggleNav() {
             const nav = document.getElementById('overlayNav');
-            const toggle = document.getElementById('menuToggle');
-            if(nav.style.opacity == '0' || nav.style.opacity == '') {
-                nav.style.opacity = '1';
-                nav.style.visibility = 'visible';
-                toggle.children[1].children[0].style.transform = 'translateY(4px) rotate(45deg)';
-                toggle.children[1].children[1].style.transform = 'translateY(-5px) rotate(-45deg)';
-            } else {
+            const toggleBtn = document.getElementById('menuToggle');
+            if (nav && toggleBtn) {
+                nav.classList.toggle('active');
+                toggleBtn.classList.toggle('active');
+            }
+        } else {
                 nav.style.opacity = '0';
                 nav.style.visibility = 'hidden';
                 toggle.children[1].children[0].style.transform = 'none';
@@ -560,6 +559,7 @@
         </script>
 </body>
 </html>
+
 
 
 
