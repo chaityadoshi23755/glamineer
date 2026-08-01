@@ -41,7 +41,7 @@ body {
     z-index: 9999;
     transform: translate(-50%, -50%);
     transition: width 0.3s, height 0.3s, background-color 0.3s;
-    mix-blend-mode: difference;
+    /* mix-blend-mode removed */ box-shadow: 0 0 8px rgba(212, 175, 55, 0.8);
 }
 .custom-cursor.hovering {
     width: 60px;
@@ -471,3 +471,4 @@ footer {
     .custom-cursor { display: none; } /* Disable custom cursor on mobile */
     * { cursor: auto; }
 }
+
