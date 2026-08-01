@@ -3,167 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TEMP</title>
-
-    <script>document.documentElement.className="js";
-    var supportsCssVars=function(){var e,t=document.createElement("style");
-    return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");
-    </script>
-    <!-- --------------------------------- -->
-
-    <!-- IMAGES TO CONTENT PATHAR WALA -->
+    <title>Glamineer | The Skin to Your Furniture</title>
+    <meta name="description" content="Glamineer - Premium skins and panels for your furniture.">
     <link rel="stylesheet" type="text/css" href="index.css">
-    
 </head>
 <body>
-    <header class="header">
-        <div class="logo"> <img src="logoMain2.png" alt="Company Logo"> </div>
-        <div class="menu-icon" onclick="toggleMenu()">☰</div>
-        <div class="menu" id="menu">
+    <header class="header" id="header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="logoMain2.png" alt="Glamineer Logo">
+            </a>
+        </div>
+        <div class="menu-icon" onclick="openNav()">☰</div>
+        <nav class="menu" id="menu">
             <div class="menu-item">
-                <a href="#">Contact</a>
+                <a href="#home">Home</a>
             </div>
             <div class="menu-item">
-                <a href="#">Products</a>
+                <a href="#products">Products</a>
                 <div class="sub-menu">
-                    <a href="#">Submenu Item 1</a>
-                    <a href="#">Submenu Item 2</a>
-                    <a href="#">Submenu Item 3</a>
+                    <a href="update2/artisanal.html">Artisanal Panels</a>
+                    <a href="update2/door.html">Door Skins</a>
+                    <a href="texture.html">Texture Panels</a>
                 </div>
             </div>
             <div class="menu-item">
-                <a href="#">About Us</a>
-                
+                <a href="#about">About Us</a>
             </div>
-            <!-- Add more menu items as needed -->
-        </div>
+            <div class="menu-item">
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+        
+        <!-- Mobile Sidenav -->
         <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()", style="color: #fff">×</a>
-            <a href="#">Home</a>
-            <a href="#">Products</a>
-            <a href="#">About Us</a>
-    
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#home" onclick="closeNav()">Home</a>
+            <a href="#products" onclick="closeNav()">Products</a>
+            <a href="update2/artisanal.html" style="font-size: 1rem; color: var(--text-light);">-- Artisanal Panels</a>
+            <a href="update2/door.html" style="font-size: 1rem; color: var(--text-light);">-- Door Skins</a>
+            <a href="texture.html" style="font-size: 1rem; color: var(--text-light);">-- Texture Panels</a>
+            <a href="#about" onclick="closeNav()">About Us</a>
+            <a href="#contact" onclick="closeNav()">Contact</a>
         </div>
     </header>
 
-    
-
-    <div class="slideshow-container">
-        <!-- Slides -->
-        <!-- <div class="mySlides fade">
-            <img src="phone.jpg" style="width:100%">
-        </div> -->
-
-        <div class="mySlides fade">
-            <img src="ss4.jpg" style="width:100%">
-        </div>
-
-        <div class="mySlides fade">
-            <img src="ss5.jpg" style="width:100%">
-        </div>
-        <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-        </div>
-
-        <!-- Navigation arrows -->
-        <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a> -->
-    </div>
-    <div class="quote">
-        "Your exclusive journey begins here. This is a quote for Glamineer, The skin to Your Furniture. This quote will be given by Chaitya Doshi"
-    </div>
-    <!-- Circle indicators -->
-
-
-
-    <div class="card-container">
-        <a href="update2\artisanal.html" class="fullCard">
-        <div class="fullCard" >
-            <div class="card card1">
-                <div class="card-content"></div>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="mySlides active">
+                <img src="ss4.jpg" alt="Glamineer Furniture 1">
             </div>
-            <div class="desc">
-                <h2>ARTISANAL PANELS</h2>
-                <p>Card content...</p>
+            <div class="mySlides">
+                <img src="ss5.jpg" alt="Glamineer Furniture 2">
             </div>
-        </div>
-        </a>
+            <div class="mySlides">
+                <img src="4.jpg" alt="Glamineer Furniture 3">
+            </div>
+            
+            <div class="hero-overlay">
+                <h1 class="hero-title reveal">Elevate Your Space</h1>
+                <p class="hero-subtitle reveal">Premium finishes and textures for modern living.</p>
+                <a href="#products" class="hero-btn reveal">Explore Collection</a>
+            </div>
+        </section>
 
-        <a href="update2\door.html" class="fullCard">
-        <div class="fullCard">
-            <div class="desc">
-                <h2>DOOR SKINS</h2>
-                <p>Card content...</p>
-            </div>
-            <div class="card card2">
-                <div class="card-content"></div>
-            </div>
-        </div>
-        </a>
+        <!-- Quote Section -->
+        <section class="quote-section reveal" id="about">
+            <p class="quote">
+                "Your exclusive journey begins here. Glamineer is the ultimate skin to your furniture."
+            </p>
+        </section>
 
-        <centre>
-        <a href="update2\texture.html" class="fullCard">
-        <div class="fullCard">
-            <div class="card card3">
-                <div class="card-content"></div>
+        <!-- Products Section -->
+        <section class="products-section" id="products">
+            <h2 class="section-title reveal">Our Collections</h2>
+            <div class="card-container">
+                <a href="update2/artisanal.html" class="fullCard reveal">
+                    <div class="card" style="background-image: url('Galaxy\ Blue\ Duo.jpg');"></div>
+                    <div class="desc">
+                        <h2>Artisanal Panels</h2>
+                        <p>Discover hand-crafted elegance and unmatched durability.</p>
+                    </div>
+                </a>
+
+                <a href="update2/door.html" class="fullCard reveal" style="transition-delay: 0.2s;">
+                    <div class="card" style="background-image: url('ABSTRATTO\ GUNMETAL.jpg');"></div>
+                    <div class="desc">
+                        <h2>Door Skins</h2>
+                        <p>Transform your entrances with premium door finishes.</p>
+                    </div>
+                </a>
+
+                <a href="texture.html" class="fullCard reveal" style="transition-delay: 0.4s;">
+                    <div class="card" style="background-image: url('texture.jpg');"></div>
+                    <div class="desc">
+                        <h2>Texture Panels</h2>
+                        <p>Add depth and character with rich, tactile textures.</p>
+                    </div>
+                </a>
             </div>
-            <div class="desc">
-                <h2>TEXTURE PANELS</h2>
-                <p>Card content...</p>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials-section">
+            <h2 class="section-title reveal">What Our Clients Say</h2>
+            <div class="testimonials">
+                <div class="testimonial reveal">
+                    <div class="testimonial-image" style="background-image: url('1_1.jpg');"></div>
+                    <p class="testimonial-text">"Absolutely stunning panels. They transformed our entire living room in a weekend."</p>
+                    <h3 class="testimonial-name">Sarah Jenkins</h3>
+                </div>
+                <div class="testimonial reveal" style="transition-delay: 0.2s;">
+                    <div class="testimonial-image" style="background-image: url('5-1.jpg');"></div>
+                    <p class="testimonial-text">"The quality of the door skins is unmatched. Highly recommend Glamineer to anyone."</p>
+                    <h3 class="testimonial-name">Michael Chang</h3>
+                </div>
+                <div class="testimonial reveal" style="transition-delay: 0.4s;">
+                    <div class="testimonial-image" style="background-image: url('6-2.jpg');"></div>
+                    <p class="testimonial-text">"Professional service and exquisite textures. Our design firm exclusively uses Glamineer."</p>
+                    <h3 class="testimonial-name">Elena Rodriguez</h3>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h2>Glamineer</h2>
+                <p style="color: #bbb; line-height: 1.6;">The ultimate skin for your furniture, bringing premium aesthetics to your spaces.</p>
+            </div>
+            <div class="footer-section">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h2>Follow Us</h2>
+                <ul>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
             </div>
         </div>
-        </a>
-    </centre>
-        <!-- <a href="update2\artisanal.html" class="fullCard">
-        <div class="fullCard">
-            <div class="desc">
-                <h2>HANDLES</h2>
-                <p>Card content...</p>
-            </div>
-            <div class="card card4">
-                <div class="card-content"></div>
-            </div>
-        </div>
-        </a> -->
-    </div>
-    <div class="testimonials">
-        <div class="testimonial">
-            <div class="testimonial-image" style="background-color: black;"></div>
-            <div class="testimonial-name">Name Surname</div>
-            <div class="testimonial-text">Testimonial text...</div>
-        </div>
-        <div class="testimonial">
-            <div class="testimonial-image" style="background-color: black;"></div>
-            <div class="testimonial-name">Name Surname</div>
-            <div class="testimonial-text">Testimonial text...</div>
-        </div>
-        <div class="testimonial">
-            <div class="testimonial-image" style="background-color: black;"></div>
-            <div class="testimonial-name">Name Surname</div>
-            <div class="testimonial-text">Testimonial text...</div>
-        </div>
-        <!-- Repeat for other testimonials -->
-    </div>
-    <footer>
-        <div class="footer-section">
-            <h2>Follow us on:</h2>
-            <!-- Add your social media links here -->
-        </div>
-        <div class="footer-section">
-            <h2>All content links in header</h2>
-            <!-- Add your content links here -->
-        </div>
-        <div class="footer-section">
-            <h2>Products section</h2>
-            <!-- Add your product links or information here -->
-        </div>
-        <div class="footer-section">
-            <h2>Website made by</h2>
-            <!-- Add your information here -->
+        <div class="footer-bottom">
+            &copy; 2026 Glamineer. All Rights Reserved. Designed by Chaitya Doshi.
         </div>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>

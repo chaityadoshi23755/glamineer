@@ -1,81 +1,58 @@
-document.documentElement.className = "js";
-var supportsCssVars = function() {
-    var e, t = document.createElement("style");
-    return t.innerHTML = "root: { --tmp-var: bold; }",
-    document.head.appendChild(t),
-    e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")),
-    t.parentNode.removeChild(t),
-    e
-};
-supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");
-
-function toggleMenu() {
-    var menu = document.getElementById("menu");
-    var sidenav = document.getElementById("mySidenav");
-    
-    if (window.innerWidth <= 768) {
-        if (menu.style.display === "flex") {
-            menu.style.display = "none";
-            sidenav.style.width = "0";
-        } else {
-            sidenav.style.width = "30%";
-        }
-    }
-}
-
-function openNav() {
-    console.log('openNav called');
-    document.getElementById("mySidenav").style.width = "20%";
-}
-
-function closeNav() {
-    console.log('closeNav called');
-    document.getElementById("mySidenav").style.width = "0";
-}
-
-var slideIndex = 0;
-var maxSlideIndex = 2; 
-
-window.addEventListener('scroll', function() {
-    var navbar = document.querySelector('.header'); // replace '.navbar' with your navbar's class or id
-    if (window.pageYOffset > 0) {
-        navbar.classList.add('scrolled');
+// Header scroll effect
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
     } else {
-        navbar.classList.remove('scrolled');
+        header.classList.remove('scrolled');
     }
 });
 
-function showSlides() {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("dot");
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1}    
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace("active", "");
-    }
-    slides[slideIndex-1].style.display = "block";  
-    dots[slideIndex-1].className += " active";
-    setTimeout(showSlides, 5000); // Change slide every 2 seconds
+// Mobile Navigation
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
 }
 
-function plusSlides(n) {
-    var sl = slideIndex += n;
-    if (sl < 0){
-        slideIndex = maxSlideIndex;
-    } else if (sl > maxSlideIndex){
-        slideIndex = 0;
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+
+// Hero Slideshow
+let slideIndex = 0;
+const slides = document.querySelectorAll('.mySlides');
+
+function showSlides() {
+    slides.forEach(slide => slide.classList.remove('active'));
+    slideIndex++;
+    if (slideIndex > slides.length) {
+        slideIndex = 1;
     }
+    slides[slideIndex - 1].classList.add('active');
+    setTimeout(showSlides, 5000); // Change image every 5 seconds
+}
+
+// Start slideshow if slides exist
+if (slides.length > 0) {
     showSlides();
 }
 
-function currentSlide(n) {
-    showSlides(slideIndex = n);
-}
+// Intersection Observer for scroll animations
+const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+};
 
-document.addEventListener('DOMContentLoaded', function () {
-    showSlides(); // Start the slideshow
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            // Optional: unobserve after animating to keep it from repeating
+            // observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.reveal').forEach((element) => {
+    observer.observe(element);
 });
